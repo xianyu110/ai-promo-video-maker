@@ -33,7 +33,7 @@
 把仓库克隆到本地，再安装 Python 依赖和截图用的浏览器内核。
 
 ```bash
-git clone https://github.com/liyupi/ai-promo-video-maker.git
+git clone https://github.com/xianyu110/ai-promo-video-maker.git
 cd ai-promo-video-maker
 pip install -r template/requirements.txt
 playwright install chromium
@@ -52,7 +52,7 @@ python3 template/scripts/doctor.py
 这个仓库本身就是一个标准的 Agent Skill，可以用 [skills](https://github.com/vercel-labs/skills) 命令行工具一键安装到 Claude Code、Cursor、Codex 等 AI 工具里。加上 `-g` 表示安装到用户目录，这样所有项目都能用。
 
 ```bash
-npx skills add liyupi/ai-promo-video-maker -g
+npx skills add xianyu110/ai-promo-video-maker -g
 ```
 
 安装以后，在任意项目里对 AI 说「给这个项目做一支宣传片」，它就会自动调用这个 Skill。这种用法特别适合在产品自己的代码仓库里使用，因为 AI 可以直接读取源码、文档和 README，拿到最准确的一手素材。成片会保存在当前项目的 `宣传片/` 目录里，AI 也会提醒你把这个目录加进 `.gitignore`，以免几个 GB 的工程文件被提交上去。以后想更新到最新版本，运行 `npx skills update` 即可。
@@ -86,6 +86,10 @@ npx skills add liyupi/ai-promo-video-maker -g
 ### 推荐使用的模型
 
 推荐使用 **Claude Opus 5.5** 或者更先进的模型。一支宣传片要经过十几个步骤，以及反复多轮的截图审查和音频校验，模型需要在很长的上下文里始终记得规范里的要求，同时还要有不错的审美判断。能力较弱的模型往往会跳过校验步骤，或者不知不觉把每个产品都做成千篇一律的深色科技风。
+
+## 教程：用 Fable 5.2 做宣传片
+
+完整流程复盘见 [如何用 Fable 5.2 做 AI 产品宣传片（流程复盘）](docs/fable-5-2-promo-retrospective.md)。文里按实际走过的步骤写了调研、需求确认、风格样帧、Remotion 画面、配乐旁白和渲染校验，并配有过程插图。
 
 ## AI 会先给你看样图，再动手
 
