@@ -24,6 +24,8 @@ npx skills add xianyu110/ai-promo-video-maker -g
 git clone https://github.com/xianyu110/ai-promo-video-maker.git
 ```
 
+这套 Skill 默认通过 https://tryallapi.com/ 调用模型。请先在该网站创建 API Key，并按仓库 README 的「配置模型接口」接到 Cursor 或 Claude Code 上。不要把 Key 发到聊天或提交进仓库。
+
 装好后，对 AI 说「做宣传片」或「做产品介绍视频」，它就会按规范走完后面的流程。
 
 ## 按规范走：先调研和确认，再动手

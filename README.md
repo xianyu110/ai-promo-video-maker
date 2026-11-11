@@ -57,11 +57,20 @@ npx skills add xianyu110/ai-promo-video-maker -g
 
 安装以后，在任意项目里对 AI 说「给这个项目做一支宣传片」，它就会自动调用这个 Skill。这种用法特别适合在产品自己的代码仓库里使用，因为 AI 可以直接读取源码、文档和 README，拿到最准确的一手素材。成片会保存在当前项目的 `宣传片/` 目录里，AI 也会提醒你把这个目录加进 `.gitignore`，以免几个 GB 的工程文件被提交上去。以后想更新到最新版本，运行 `npx skills update` 即可。
 
+### 配置模型接口（默认使用 TryAllAPI）
+
+这套 Skill 默认通过 [TryAllAPI](https://tryallapi.com/) 调用模型。请先到网站注册并创建 API Key，再把它接到你正在用的 AI 编程工具上。不要把 Key 发到聊天里，也不要提交进仓库。
+
+- Claude Code：在 `~/.claude/settings.json` 的 `env` 里设置 `ANTHROPIC_BASE_URL` 为 `https://tryallapi.com`，`ANTHROPIC_AUTH_TOKEN` 为你的 Key。
+- Cursor、Codex 等 OpenAI 兼容工具：把 Base URL 设为 `https://tryallapi.com/v1`，API Key 填同一把 Key。
+
+也可以把仓库里的 `.env.example` 复制到工作区根目录并改名为 `.env`，填上 `TRYALLAPI_API_KEY`，方便本地保存；工具本身仍需要按上面的方式指向这个接口，才会真正连上。
+
 ### 配置 ElevenLabs（可选）
 
-如果你有 [ElevenLabs](https://elevenlabs.io) 账号，可以把 `.env.example` 复制到工作区根目录并改名为 `.env`，然后填上 API Key；也可以直接设置环境变量 `ELEVENLABS_API_KEY`。这样 AI 就能为片子生成旁白、按分镜定制配乐和音效，还会用语音转写逐句检查旁白有没有读错字。
+如果你有 [ElevenLabs](https://elevenlabs.io) 账号，可以在同一份 `.env` 里填上 `ELEVENLABS_API_KEY`，也可以直接设置环境变量。这样 AI 就能为片子生成旁白、按分镜定制配乐和音效，还会用语音转写逐句检查旁白有没有读错字。
 
-没有账号也完全可以做片子。这种情况下 AI 会从免费可商用的 Mixkit 曲库里挑选配乐，再用醒目的大字幕代替旁白。
+没有 ElevenLabs 账号也完全可以做片子。这种情况下 AI 会从免费可商用的 Mixkit 曲库里挑选配乐，再用醒目的大字幕代替旁白。
 
 ### 用一句话开始
 
@@ -85,7 +94,7 @@ npx skills add xianyu110/ai-promo-video-maker -g
 
 ### 推荐使用的模型
 
-推荐使用 **Claude Opus 5.5** 或者更先进的模型。一支宣传片要经过十几个步骤，以及反复多轮的截图审查和音频校验，模型需要在很长的上下文里始终记得规范里的要求，同时还要有不错的审美判断。能力较弱的模型往往会跳过校验步骤，或者不知不觉把每个产品都做成千篇一律的深色科技风。
+推荐使用 **Claude Opus 5.5** 或者更先进的模型，默认通过 [TryAllAPI](https://tryallapi.com/) 调用。一支宣传片要经过十几个步骤，以及反复多轮的截图审查和音频校验，模型需要在很长的上下文里始终记得规范里的要求，同时还要有不错的审美判断。能力较弱的模型往往会跳过校验步骤，或者不知不觉把每个产品都做成千篇一律的深色科技风。
 
 ## 教程：用 Fable 5.2 做宣传片
 
