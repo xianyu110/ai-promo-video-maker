@@ -1,10 +1,10 @@
 # 如何用 Fable 5.2 做 AI 产品宣传片（流程复盘）
 
-![封面：如何用 Fable 5.2 做宣传片](images/fable-5-2-retrospective/cover.jpg)
+![封面：如何用 Fable 5.2 做宣传片](https://upload.maynor1024.live/file/1794385684486_cover.jpg)
 
 这次我用 Fable 5.2，配合一套开源的宣传片 Skill，在 Cursor 和 Claude Code 里做了一支产品宣传片：16:9、60 帧、大约 50 秒。画面不是网站截图，而是用 Remotion 重绘的模型广场卡片风——卡片铺开，点开其中一张，能看到参数和标价。这套 Skill 背后的模型由 tryallapi.com 驱动。
 
-![开场约 4 秒预览：模型卡片铺开，标题落在 Fable 5.2 上](images/fable-5-2-retrospective/clip-hook.gif)
+![开场约 4 秒预览：模型卡片铺开，标题落在 Fable 5.2 上](https://upload.maynor1024.live/file/1794385686377_clip-hook.gif)
 
 这篇文章按我们实际走过的流程来写，方便对照着做。先说清楚一件事：Fable 5.2 负责调研辅助、分镜和文案；成片是 Remotion 工程渲染出来的，不是模型直接导出的 MP4。把这两步分开，后面会少走很多弯路。
 
@@ -42,23 +42,23 @@ git clone https://github.com/xianyu110/ai-promo-video-maker.git
 
 确认需求的同时，AI 会给出几个差异比较大的风格方向，并画出样帧。我们没有一次就定稿：先试过极简发布会风，再改成米白纸色、衬线标题的编辑向纸页风，后来才改成模型广场卡片——因为产品本身就是一张张模型卡，Fable 5.2 也只是其中一张，点开后才是详情。样帧可以混搭，比如「A 的配色加 C 的版式」。选定之后，再进入制作。
 
-![中途试过的编辑向纸页风样帧：米白底、衬线标题。这一版还没有广场卡片，后来没有作为最终方向](images/fable-5-2-retrospective/style-editorial.jpg)
+![中途试过的编辑向纸页风样帧：米白底、衬线标题。这一版还没有广场卡片，后来没有作为最终方向](https://upload.maynor1024.live/file/1794385684656_style-editorial.jpg)
 
 **4. 制作画面**
 
 画面是在 Remotion 工程里做的。我们这版没有用网站实拍，而是按公开的模型目录，用组件把卡片重绘出来：先是一片卡片铺开，再点出 Fable 5.2 那张，展开参数。如果你的产品更适合真实界面，也可以走页面截图的路子；两种都可以，关键是先在需求里写清楚。
 
-![广场里的模型卡片铺开。这些卡片是用组件重绘的，不是网站截图](images/fable-5-2-retrospective/still-plaza-cascade.jpg)
+![广场里的模型卡片铺开。这些卡片是用组件重绘的，不是网站截图](https://upload.maynor1024.live/file/1794385688258_still-plaza-cascade.jpg)
 
-![在网格中点出 Fable 5.2 这张卡](images/fable-5-2-retrospective/still-fable-card.jpg)
+![在网格中点出 Fable 5.2 这张卡](https://upload.maynor1024.live/file/1794385687354_still-fable-card.jpg)
 
 主插图是下面这段预览：点开卡片、展开参数，大约 6.5 秒。
 
-![主插图：点开 Fable 5.2 卡片，展开参数和公开标价（约 6.5 秒）](images/fable-5-2-retrospective/clip-fable-open.gif)
+![主插图：点开 Fable 5.2 卡片，展开参数和公开标价（约 6.5 秒）](https://upload.maynor1024.live/file/1794385697663_clip-fable-open.gif)
 
-（若专栏编辑器支持插入短视频，可用备用文件 `images/fable-5-2-retrospective/clip-fable-open.mp4`，大约 430KB，内容与上面这段 GIF 相同。）
+（若专栏编辑器支持插入短视频，可用备用文件 https://upload.maynor1024.live/file/1794385697119_clip-fable-open.mp4，大约 430KB，内容与上面这段 GIF 相同。）
 
-![展开后的详情静帧：参数和公开标价都写在卡片上](images/fable-5-2-retrospective/still-fable-detail.jpg)
+![展开后的详情静帧：参数和公开标价都写在卡片上](https://upload.maynor1024.live/file/1794385691923_still-fable-detail.jpg)
 
 **5. 配乐和卡点**
 
@@ -76,7 +76,7 @@ git clone https://github.com/xianyu110/ai-promo-video-maker.git
 
 下面这张是制作过程中的分镜对照，只保留了开场到点开卡片这一段，方便回看节奏。后半段没有放进来。
 
-![分镜对照：从开场、卡片铺开，到点出并打开 Fable 5.2。仅保留这一段过程](images/fable-5-2-retrospective/still-contact-sheet-process.jpg)
+![分镜对照：从开场、卡片铺开，到点出并打开 Fable 5.2。仅保留这一段过程](https://upload.maynor1024.live/file/1794385698974_still-contact-sheet-process.jpg)
 
 ## 复盘时我觉得值得留下的几点
 
@@ -84,7 +84,7 @@ git clone https://github.com/xianyu110/ai-promo-video-maker.git
 
 第二，宣传片很容易做成说明书。我们改了好几轮，才从「把卖点念一遍」转到「一张卡片被点开」这种能看懂的动作。如果你也在做产品介绍，不妨先问：哪一个画面能让人 3 秒内明白这是什么。
 
-![开场静帧：卡片已经铺开，3 秒内能看清这支片子在讲 Fable 5.2](images/fable-5-2-retrospective/still-hook.jpg)
+![开场静帧：卡片已经铺开，3 秒内能看清这支片子在讲 Fable 5.2](https://upload.maynor1024.live/file/1794385699863_still-hook.jpg)
 
 第三，数字和版权都不要想当然。没有出处的数字不要上屏；配乐、音效、字体、Remotion 的授权范围，做之前看一眼。Remotion 对个人和 3 人以内的公司是免费的，更大的团队需要另看它的授权说明。
 
